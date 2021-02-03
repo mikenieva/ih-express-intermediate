@@ -1,0 +1,44 @@
+{{!-- "".hbs "" significa que es una archivo de Handlebars --}}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Visas Ironhack</title>
+  <link rel="stylesheet" href="stylesheets/index.css">
+</head>
+<body>
+  <h1>Ironhacker Be Like</h1>
+  <img src="https://media.giphy.com/media/l0MYEqEzwMWFCg8rm/giphy.gif">
+
+    <p>Hola soy {{name}} y estoy en el bootcamp de {{bootcamp}}</p>
+    {{{mensaje}}}
+
+    {{#if age}}
+        <h1>Tengo {{age}} años</h1>
+    {{else}}
+        <h2>La edad no fue establecida</h2>
+    {{/if}}
+
+    <ul>
+        {{#each comidasFavoritas}}
+            <li><p>Me gusta: <b>{{this}}</b></p></li>
+            {{else}}
+            <p>No hay comidas establecidas</p>
+        {{/each}}
+    </ul>
+
+    {{lenguajes.frontend}}
+    {{lenguajes.backend}}
+
+    {{!-- #with posicionarme dentro de un objeto --}}
+    {{#with lenguajes}}
+    {{!-- #each me funciona para ARREGLOS --}}
+        {{#each db }} 
+            <p>{{@index}} - {{this}}</p>
+        {{/each}}
+    {{/with}}
+
+
+</body>
+</html>
